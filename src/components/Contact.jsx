@@ -14,13 +14,13 @@ const Contact = () => {
 
   return (
     <Section id="contact">
-      <div className="grid grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1.5rem' }}>
             Let's Start a <span className="text-gradient">Conversation</span>
           </h2>
           <p style={{ color: 'hsl(var(--muted-foreground))', marginBottom: '2.5rem' }}>
@@ -65,7 +65,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="glass"
-          style={{ padding: '3rem', borderRadius: '2rem' }}
+          style={{ padding: '2rem sm:3rem', borderRadius: '2rem' }}
         >
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

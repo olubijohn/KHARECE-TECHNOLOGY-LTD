@@ -45,7 +45,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ fontSize: '2.5rem', marginBottom: '1rem' }}
+          style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1rem' }}
         >
           Our <span className="text-gradient">Core expertise</span>
         </motion.h2>
@@ -61,7 +61,7 @@ const Services = () => {
       </div>
 
       <motion.div 
-        className="grid grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}

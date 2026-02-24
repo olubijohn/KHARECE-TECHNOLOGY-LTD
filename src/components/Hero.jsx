@@ -54,11 +54,12 @@ const Hero = () => {
       }} />
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div className="grid grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center lg:text-left flex flex-col items-center lg:items-start"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -82,16 +83,16 @@ const Hero = () => {
               Revolutionizing IT Consultancy
             </motion.div>
             
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1.5rem' }}>
-              Turning Vision into <br />
+            <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 4rem)', marginBottom: '1.5rem' }}>
+              Turning Vision into <br className="hidden sm:block" />
               <span className="text-gradient">Robust Reality</span>
             </h1>
             
             <p style={{ fontSize: '1.125rem', color: 'hsl(var(--muted-foreground))', marginBottom: '2.5rem', maxWidth: '600px' }}>
-              KHARECE TECHNOLOGY LTD delivers cutting-edge software development and domestic IT solutions tailored to your business needs. We bridge the gap between complex technology and seamless execution.
+              KHARECE TECHNOLOGY LTD delivers cutting-edge software development and domestic IT solutions tailored to your business needs. 
             </p>
             
-            <div className="flex gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
               <Button onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}>
                 Start a Project <ArrowRight size={20} />
               </Button>

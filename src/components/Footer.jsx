@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="glass" style={{ marginTop: '4rem', padding: '5rem 0 2rem 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
       <div className="container">
-        <div className="grid grid-cols-3 gap-12" style={{ marginBottom: '4rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12" style={{ marginBottom: '4rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1.5rem' }}>
               <Code2 size={32} color="hsl(var(--primary))" />
@@ -69,15 +69,19 @@ const Footer = () => {
 
         <div style={{ 
           display: 'flex', 
+          flexDirection: 'column',
+          smFlexDirection: 'row',
           justifyContent: 'space-between', 
           alignItems: 'center', 
+          gap: '1.5rem',
           paddingTop: '2rem', 
           borderTop: '1px solid rgba(255,255,255,0.05)',
           color: 'hsl(var(--muted-foreground))',
-          fontSize: '0.9rem'
-        }}>
+          fontSize: '0.9rem',
+          textAlign: 'center'
+        }} className="flex-col sm:flex-row">
           <p>&copy; {new Date().getFullYear()} KHARECE TECHNOLOGY LTD (UK). All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '2rem' }}>
+          <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
           </div>

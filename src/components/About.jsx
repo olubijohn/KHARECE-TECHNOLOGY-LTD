@@ -15,15 +15,15 @@ const About = () => {
 
   return (
     <Section id="about" className="bg-secondary/30">
-      <div className="grid grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem' }}>
-            Driving <span className="text-gradient">Digital Success</span> <br />
+          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1.5rem' }}>
+            Driving <span className="text-gradient">Digital Success</span> <br className="hidden sm:block" />
             Since Day One
           </h2>
           <p style={{ color: 'hsl(var(--muted-foreground))', marginBottom: '2rem', lineHeight: '1.7' }}>
@@ -31,7 +31,7 @@ const About = () => {
           </p>
           
           <motion.div 
-            className="grid grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}

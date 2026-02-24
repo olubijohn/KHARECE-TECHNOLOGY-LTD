@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ShieldCheck } from 'lucide-react';
+import { Menu, X, ShieldCheck, ArrowRight } from 'lucide-react';
 import { Button } from './ui';
 
 
@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="p-2 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
             <ShieldCheck size={24} className="text-primary" />
           </div>
-          <span className="text-lg md:text-xl font-bold tracking-tight">
+          <span className="text-base sm:text-lg md:text-xl font-bold tracking-tight">
             KHARECE <span className="text-primary">TECHNOLOGY</span>
           </span>
         </motion.a>

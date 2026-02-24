@@ -46,7 +46,7 @@ const TechStack = () => {
         >
           Our Capabilities
         </motion.div>
-        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
+        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1rem' }}>
           Future-Proof <span className="text-gradient">Technology Stack</span>
         </h2>
         <p style={{ color: 'hsl(var(--muted-foreground))', maxWidth: '600px', margin: '0 auto' }}>
@@ -54,7 +54,7 @@ const TechStack = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
