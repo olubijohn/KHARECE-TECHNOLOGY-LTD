@@ -39,29 +39,31 @@ const services = [
 
 const Services = () => {
   return (
-    <Section id="services">
-      <div className="text-center" style={{ marginBottom: '4rem' }}>
+    <Section id="services" className="bg-white">
+      <div className="text-center mb-16">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1rem' }}
+          className="mb-4"
+          style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}
         >
-          Our <span className="text-gradient">Core expertise</span>
+          Our <span className="text-gradient">Core Expertise</span>
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          style={{ color: 'hsl(var(--muted-foreground))', maxWidth: '600px', margin: '0 auto' }}
+          className="text-lg text-muted max-w-2xl mx-auto"
+          style={{ fontWeight: 500 }}
         >
-          We provide a comprehensive suite of IT services designed to empower your business through digital transformation and innovation.
+          We build high-performance, secure, and scalable digital ecosystems for the modern enterprise.
         </motion.p>
       </div>
 
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-100px" }}
@@ -69,9 +71,7 @@ const Services = () => {
           hidden: { opacity: 0 },
           show: {
             opacity: 1,
-            transition: {
-              staggerChildren: 0.15
-            }
+            transition: { staggerChildren: 0.1 }
           }
         }}
       >
@@ -79,55 +79,21 @@ const Services = () => {
           <motion.div
             key={index}
             variants={{
-              hidden: { opacity: 0, scale: 0.9, y: 30 },
-              show: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
+              hidden: { opacity: 0, scale: 0.95, y: 20 },
+              show: { opacity: 1, scale: 1, y: 0 }
             }}
-            className="glass"
-            style={{ 
-              padding: '2.5rem', 
-              borderRadius: 'var(--radius)',
-              transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-              cursor: 'default',
-              position: 'relative',
-              overflow: 'hidden'
-            }}
-            whileHover={{ 
-              y: -15, 
-              borderColor: 'hsl(var(--primary))',
-              boxShadow: '0 20px 40px -20px hsla(var(--primary), 0.4)'
-            }}
+            className="p-8 rounded-3xl bg-subtle border border-black/5 hover:border-accent/40 shadow-sm transition-all duration-300"
+            whileHover={{ y: -10, backgroundColor: '#ffffff', boxShadow: '0 20px 40px -20px rgba(59, 130, 246, 0.2)' }}
           >
-            {/* Hover glow effect */}
-            <motion.div
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                background: 'radial-gradient(circle at center, hsla(var(--primary), 0.1) 0%, transparent 70%)',
-                opacity: 0,
-                zIndex: 0
-              }}
-              whileHover={{ opacity: 1 }}
-            />
-            
-            <div style={{ 
-              color: 'hsl(var(--primary))', 
-              marginBottom: '1.5rem',
-              display: 'inline-flex',
-              padding: '1rem',
-              background: 'rgba(59, 130, 246, 0.1)',
-              borderRadius: '1rem',
-              position: 'relative',
-              zIndex: 1
-            }}>
-              <motion.div whileHover={{ rotate: 15 }}>
+            <div className="w-14 h-14 rounded-2xl bg-white border border-black/5 flex items-center justify-center text-accent mb-6 shadow-sm">
+              <motion.div whileHover={{ rotate: 10 }}>
                 {service.icon}
               </motion.div>
             </div>
-            <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', position: 'relative', zIndex: 1 }}>{service.title}</h3>
-            <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.95rem', lineHeight: '1.6', position: 'relative', zIndex: 1 }}>
+            <h3 className="text-xl font-black uppercase tracking-tighter mb-4" style={{ color: 'var(--text-main)' }}>
+              {service.title}
+            </h3>
+            <p className="text-sm font-bold text-muted" style={{ lineHeight: 1.6 }}>
               {service.description}
             </p>
           </motion.div>

@@ -25,36 +25,26 @@ const techStack = [
 
 const TechStack = () => {
   return (
-    <Section id="tech" className="bg-secondary/20">
-      <div className="text-center" style={{ marginBottom: '4rem' }}>
+    <Section id="tech" className="bg-subtle">
+      <div className="text-center mb-16">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          style={{ 
-            display: 'inline-block', 
-            padding: '4px 12px', 
-            borderRadius: '9999px', 
-            background: 'hsla(var(--primary), 0.1)',
-            color: 'hsl(var(--primary))',
-            fontSize: '0.8rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '1rem'
-          }}
+          className="px-4 py-1 rounded-full bg-white border border-black/5 text-accent font-bold uppercase tracking-widest mb-4 inline-block"
+          style={{ fontSize: '0.75rem' }}
         >
           Our Capabilities
         </motion.div>
-        <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1rem' }}>
+        <h2 className="mb-4" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
           Future-Proof <span className="text-gradient">Technology Stack</span>
         </h2>
-        <p style={{ color: 'hsl(var(--muted-foreground))', maxWidth: '600px', margin: '0 auto' }}>
-          We leverage the latest industry-standard technologies to build scalable, secure, and high-performance solutions for our UK and global clients.
+        <p className="text-lg text-muted max-w-2xl mx-auto" style={{ fontWeight: 500 }}>
+          We leverage industry-standard technologies to build scalable, secure, and high-performance solutions.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
@@ -62,111 +52,42 @@ const TechStack = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.05 }}
-            className="glass"
-            style={{ 
-              padding: '1.5rem', 
-              borderRadius: '1.5rem',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '1rem',
-              textAlign: 'center',
-              border: '1px solid rgba(255, 255, 255, 0.05)'
-            }}
-            whileHover={{ 
-              y: -5, 
-              borderColor: 'hsl(var(--primary))',
-              backgroundColor: 'hsla(var(--primary), 0.05)'
-            }}
+            className="p-6 rounded-2xl bg-white border border-black/5 flex flex-col items-center gap-4 text-center group transition-all duration-300 shadow-sm"
+            whileHover={{ y: -5, borderColor: 'var(--text-accent)' }}
           >
-            <div style={{ 
-              color: 'hsl(var(--primary))',
-              padding: '0.75rem',
-              background: 'rgba(59, 130, 246, 0.1)',
-              borderRadius: '0.75rem'
-            }}>
+            <div className="p-4 rounded-xl bg-subtle text-accent group-hover:bg-white transition-colors">
               {tech.icon}
             </div>
             <div>
-              <div style={{ fontSize: '1rem', fontWeight: 600 }}>{tech.name}</div>
-              <div style={{ fontSize: '0.75rem', opacity: 0.5, marginTop: '2px' }}>{tech.category}</div>
+              <div className="font-bold text-main">{tech.name}</div>
+              <div className="text-[10px] font-black uppercase tracking-widest opacity-40 mt-1">{tech.category}</div>
             </div>
           </motion.div>
         ))}
       </div>
       
-      {/* Abstract AI Graphic (CSS Based) */}
-      <div style={{ 
-        marginTop: '6rem', 
-        height: '200px', 
-        position: 'relative', 
-        overflow: 'hidden',
-        borderRadius: '2rem',
-        background: 'linear-gradient(90deg, transparent, hsla(var(--primary), 0.05), transparent)'
-      }}>
+      {/* Abstract AI Graphic */}
+      <div className="mt-20 h-[180px] relative overflow-hidden rounded-3xl bg-white border border-black/5 shadow-sm">
         <motion.div
-          animate={{ 
-            x: ['-100%', '100%'],
-            opacity: [0, 1, 0]
-          }}
-          transition={{ 
-            duration: 5, 
-            repeat: Infinity, 
-            ease: "linear" 
-          }}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '20%',
-            height: '100%',
-            background: 'linear-gradient(90deg, transparent, hsla(var(--primary), 0.3), transparent)',
-            filter: 'blur(40px)'
-          }}
+          animate={{ x: ['-100%', '100%'], opacity: [0, 0.5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 z-0 bg-gradient-to-r from-transparent via-accent/10 to-transparent blur-3xl"
+          style={{ width: '40%' }}
         />
-        <div style={{ 
-          position: 'absolute', 
-          inset: 0, 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          gap: '4rem',
-          opacity: 0.2
-        }}>
+        <div className="absolute inset-0 flex items-center justify-center gap-6 md:gap-12 opacity-10">
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              animate={{ 
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
-              }}
-              transition={{ 
-                duration: 3, 
-                repeat: Infinity, 
-                delay: i * 0.5 
-              }}
-              style={{
-                width: '60px',
-                height: '60px',
-                border: '1px solid hsl(var(--primary))',
-                borderRadius: '50%'
-              }}
+              animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
+              transition={{ duration: 4, repeat: Infinity, delay: i * 0.5 }}
+              className="w-12 h-12 md:w-20 md:h-20 border border-accent rounded-full"
             />
           ))}
         </div>
-        <div style={{ 
-          position: 'absolute', 
-          inset: 0, 
-          display: 'flex', 
-          alignItems: 'center', 
-          justifyContent: 'center',
-          fontSize: '1.5rem',
-          fontWeight: 800,
-          letterSpacing: '4px',
-          opacity: 0.6,
-          color: 'hsl(var(--primary))'
-        }}>
-          AI POWERED INTELLIGENCE
+        <div className="absolute inset-0 flex items-center justify-center text-center px-4">
+          <div className="text-xl md:text-3xl font-black uppercase tracking-[0.2em] md:tracking-[0.4em] opacity-30 text-accent">
+            AI POWERED INTELLIGENCE
+          </div>
         </div>
       </div>
     </Section>

@@ -14,24 +14,28 @@ const About = () => {
   ];
 
   return (
-    <Section id="about" className="bg-secondary/30">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <Section id="about" className="bg-subtle">
+      <div className="about-grid">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="flex flex-col items-center lg:items-start text-center lg:text-left"
         >
-          <h2 style={{ fontSize: 'clamp(2rem, 5vw, 2.5rem)', marginBottom: '1.5rem' }}>
-            Driving <span className="text-gradient">Digital Success</span> <br className="hidden sm:block" />
+          <div className="px-5 py-2 rounded-full bg-white border border-black/5 text-accent font-bold mb-6" style={{ fontSize: '0.85rem' }}>
+            WHATEVER IT TAKES
+          </div>
+          <h2 className="mb-6" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+            Driving <span className="text-gradient">Digital Success</span> <br className="hidden md:block" />
             Since Day One
           </h2>
-          <p style={{ color: 'hsl(var(--muted-foreground))', marginBottom: '2rem', lineHeight: '1.7' }}>
-            At KHARECE TECHNOLOGY LTD, we believe that technology should be an enabler, not a hurdle. Our team of expert consultants and developers work tirelessly to provide domestic and business software solutions that are as robust as they are intuitive.
+          <p className="text-lg text-muted mb-8 max-w-2xl" style={{ fontWeight: 500, lineHeight: 1.7 }}>
+            At KHARECE TECHNOLOGY LTD, we believe that technology should be an enabler, not a hurdle. Our team of expert consultants and developers work tirelessly to provide domestic and business software solutions.
           </p>
           
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -50,12 +54,11 @@ const About = () => {
                   hidden: { opacity: 0, x: -20 },
                   show: { opacity: 1, x: 0 }
                 }}
-                className="flex items-center gap-3"
-                whileHover={{ x: 5, color: 'hsl(var(--primary))' }}
-                style={{ cursor: 'default', transition: 'color 0.2s' }}
+                className="flex items-center gap-3 p-4 rounded-xl bg-white border border-black/5 shadow-sm"
+                whileHover={{ x: 5, borderColor: 'var(--text-accent)' }}
               >
-                <CheckCircle2 size={20} color="hsl(var(--primary))" />
-                <span style={{ fontSize: '0.95rem', fontWeight: 500 }}>{item}</span>
+                <CheckCircle2 size={18} className="text-accent" />
+                <span className="font-bold text-sm" style={{ color: 'var(--text-main)' }}>{item}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -66,60 +69,35 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          style={{ position: 'relative' }}
-          whileHover={{ scale: 1.02 }}
+          className="relative"
         >
-          <div style={{ 
-            padding: '1rem', 
-            borderRadius: '2.5rem', 
-            overflow: 'hidden',
-            aspectRatio: '1',
-            background: 'linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.1))',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-            border: '1px solid rgba(255,255,255,0.1)',
-            position: 'relative'
-          }}>
+          <div className="main-visual-deck">
             <img 
-              src="/assets/Data Center.avif"
+              src="assets/Data Center.avif"
               alt="Professional Data Center"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '1.5rem',
-                filter: 'brightness(0.8) contrast(1.1)'
-              }}
+              className="w-full h-full object-cover"
+              style={{ aspectRatio: '1', filter: 'brightness(0.9)' }}
             />
             
             {/* Stats Overlay */}
             <motion.div 
+              className="absolute glass-card flex flex-col items-center justify-center text-center p-8"
               style={{
-                position: 'absolute',
                 top: '50%',
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
-                textAlign: 'center',
-                padding: '2rem',
-                borderRadius: '2rem',
-                backdropFilter: 'blur(8px)',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                width: '70%'
+                width: '70%',
+                background: 'rgba(255, 255, 255, 0.9)',
+                borderColor: 'white'
               }}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 1 }}
-                style={{ fontSize: '3.5rem', fontWeight: 800, color: '#fff', textShadow: '0 0 20px rgba(59, 130, 246, 0.5)' }}
-              >
+              <div style={{ fontSize: 'clamp(3rem, 6vw, 4.5rem)', fontWeight: 900, color: 'var(--text-accent)', letterSpacing: '-0.05em' }}>
                 20+
-              </motion.div>
-              <div style={{ fontSize: '1rem', color: '#fff', opacity: 0.9, fontWeight: 500 }}>Global Projects Delivered</div>
+              </div>
+              <div className="font-black uppercase tracking-widest text-[10px] opacity-60">Global Projects</div>
             </motion.div>
           </div>
         </motion.div>
-
       </div>
     </Section>
   );
