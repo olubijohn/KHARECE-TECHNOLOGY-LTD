@@ -59,9 +59,9 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
-            className="relative hidden lg:block"
+            className="relative lg:block"
           >
-            <div className="main-visual-deck animate-float">
+            <div className="main-visual-deck animate-float max-w-lg mx-auto lg:max-w-none">
               <img 
                 src="assets/11062b_53a199d7840b4947904db7d83d61e710f000.avif"
                 alt="Elite Engineering"

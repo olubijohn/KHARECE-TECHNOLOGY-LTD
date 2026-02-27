@@ -45,6 +45,10 @@
   --text-main: #0f172a;
   --text-muted: #64748b;
   --text-accent: #3b82f6;
+
+  /* Mobile Spacing Defaults */
+  --section-padding-y: 4rem;
+  --container-padding-x: 1.25rem;
 }
 
 * {
@@ -110,7 +114,7 @@ button {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 var(--container-padding-x);
 }
 
 @media (min-width: 1024px) {
@@ -120,7 +124,7 @@ button {
 }
 
 .section {
-  padding: 5rem 0;
+  padding: var(--section-padding-y) 0;
   position: relative;
 }
 

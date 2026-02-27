@@ -69,7 +69,7 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative max-w-xl mx-auto lg:max-w-none w-full"
         >
           <div className="main-visual-deck">
             <img 
